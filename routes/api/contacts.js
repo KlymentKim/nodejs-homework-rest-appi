@@ -2,6 +2,10 @@ const express = require('express')
 
 const router = express.Router()
 
+
+const contactsSheman=require('./shema/contacts');
+
+
 router.get('/', async (req, res, next) => {
   res.json({ message: 'template message' })
 })
