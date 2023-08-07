@@ -1,5 +1,5 @@
-const contactsOptions = require("../../nodejs-homework-rest-appi/models/contacts");
-const { contactsSchema } = require("../../nodejs-homework-rest-appi/schemas");
+const contactsOptions = require("../models/contacts");
+const { contactsSchema } = require("../schemas");
 
 // POST request
 const addContact = async (req, res, next) => {
@@ -13,7 +13,7 @@ const addContact = async (req, res, next) => {
       });
       return;
     }
-    const newContact = await contactsOperations.addContact(req.body);
+    const newContact = await contactsOptions.addContact(req.body);
     res.status(201).json({
       status: "success",
       code: 201,
@@ -27,7 +27,7 @@ const addContact = async (req, res, next) => {
 // GET request
 const getAllContacts = async (req, res, next) => {
   try {
-    const contacts = await contactsOperations.listContacts();
+    const contacts = await contactsOptions.listContacts();
     res.json({
       status: "success",
       code: 200,
@@ -42,7 +42,7 @@ const getAllContacts = async (req, res, next) => {
 const getByIdContact = async (req, res, next) => {
   try {
     const { contactId } = req.params;
-    const contact = await contactsOperations.getContactById(contactId);
+    const contact = await contactsOptions.getContactById(contactId);
     if (!contact) {
       res.status(404).json({
         status: "error",
@@ -73,7 +73,7 @@ const updateByIdContact = async (req, res, next) => {
       return;
     }
     const { contactId } = req.params;
-    const updatedContact = await contactsOperations.updateContact(
+    const updatedContact = await contactsOptions.updateContact(
       contactId,
       req.body
     );
@@ -99,7 +99,7 @@ const updateByIdContact = async (req, res, next) => {
 const removeByIdContact = async (req, res, next) => {
   try {
     const { contactId } = req.params;
-    const removedContact = await contactsOperations.removeContact(contactId);
+    const removedContact = await contactsOptions.removeContact(contactId);
     if (!removedContact) {
       res.status(404).json({
         status: "error",
