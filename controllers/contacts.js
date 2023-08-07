@@ -4,7 +4,7 @@ const { contactsSchema } = require("../schemas");
 // POST request
 const addContact = async (req, res, next) => {
   try {
-    const { error } = contactSchema.validate(req.body);
+    const { error } = contactsSchema.validate(req.body);
     if (error) {
       res.status(400).json({
         status: "error",
@@ -63,7 +63,7 @@ const getByIdContact = async (req, res, next) => {
 
 const updateByIdContact = async (req, res, next) => {
   try {
-    const { error } = contactSchema.validate(req.body);
+    const { error } = contactsSchema.validate(req.body);
     if (error) {
       res.status(400).json({
         status: "error",
