@@ -1,5 +1,5 @@
-const contactsOptions = require("../../models/contacts");
-const { contactsSchema } = require("../../schemas");
+const contactsOptions = require("../../nodejs-homework-rest-appi/models/contacts");
+const { contactsSchema } = require("../../nodejs-homework-rest-appi/schemas");
 
 // POST request
 const addContact = async (req, res, next) => {
