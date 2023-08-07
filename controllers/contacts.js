@@ -13,7 +13,7 @@ const addContact = async (req, res, next) => {
       });
       return;
     }
-    const newContact = await contactsOptions.addContact(req.body);
+    const newContact = await contactsSchema.addContact(req.body);
     res.status(201).json({
       status: "success",
       code: 201,
