@@ -7,34 +7,12 @@ const { contacts: use } = require("../../controllers");
 
 router.get("/", use.getAllContacts);
 
-router.get("/:contactId", use.getbyIdContact);
+router.get("/:contactId", use.getByIdContact);
 
-router.post("/", use.add);
+router.post("/", use.addContact);
 
-router.delete("/:contactId", use.removeById);
+router.delete("/:contactId", use.removeByIdContact);
 
-router.put("/:contactId", use.updateById);
+router.put("/:contactId", use.updateByIdContact);
 
 module.exports = router;
-
-
-
-// router.get('/', async (req, res, next) => {
-//   res.json({ message: 'template message' })
-// })
-
-// router.get('/:contactId', async (req, res, next) => {
-//   res.json({ message: 'template message' })
-// })
-
-// router.post('/', async (req, res, next) => {
-//   res.json({ message: 'template message' })
-// })
-
-// router.delete('/:contactId', async (req, res, next) => {
-//   res.json({ message: 'template message' })
-// })
-
-// router.put('/:contactId', async (req, res, next) => {
-//   res.json({ message: 'template message' })
-// })
