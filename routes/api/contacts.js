@@ -5,6 +5,7 @@ const router = express.Router();
 
 const { contacts: use } = require("../../controllers");
 
+
 router.get("/", use.getAllContacts);
 
 router.get("/:contactId", use.getByIdContact);
