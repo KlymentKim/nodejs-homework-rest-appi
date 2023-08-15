@@ -8,13 +8,17 @@ const contactSchema = Schema(
     },
     email: {
       type: String,
-      required:true,
+      required: true,
     },
     phone: {
       type: String,
-      required:true,
+      required: true,
     },
     favorite: {
+      type: Boolean,
+      default: false,
+    },
+    verification: {
       type: Boolean,
       default: false,
     },
@@ -22,6 +26,6 @@ const contactSchema = Schema(
   { versionKey: false, timestamps: true }
 );
 
-const Contact = model("contact", contactSchema);
+const Contact = mongoose.model("Contact", contactSchema);
 
 module.exports = Contact;
