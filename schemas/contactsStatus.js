@@ -1,7 +1,7 @@
 const Joi = require("joi");
 
-const contactSubscriptionSchema = Joi.object({
-  subscription: Joi.string().valid("starter", "pro", "business").required(),
+const contactStatusSchema = Joi.object({
+  favorite: Joi.boolean().required(),
 });
 
-module.exports = contactSubscriptionSchema;
+module.exports = contactStatusSchema;
