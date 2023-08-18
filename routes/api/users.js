@@ -1,17 +1,17 @@
 const express = require("express");
 const router = express.Router();
 
-const { users: ctrl } = require("../../controllers");
+const { users: user } = require("../../controllers");
 const { auth } = require("../../middlewares");
 
-router.post("/register", ctrl.register);
+router.post("/register", user.register);
 
-router.post("/login", ctrl.login);
+router.post("/login", user.login);
 
-router.post("/logout", auth, ctrl.logout);
+router.post("/logout", auth, user.logout);
 
-router.get("/current", auth, ctrl.getCurrent);
+router.get("/current", auth, user.getCurrent);
 
-router.patch("/", auth, ctrl.updateSubscriptionUser);
+router.patch("/", auth, user.updateAfterRemoveUser);
 
 module.exports = router;
